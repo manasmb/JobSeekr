@@ -13,17 +13,17 @@ import re
 
 from datetime import datetime as dt
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'user.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'beyond_course_scope'
-db.init_app(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'user.db')
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SECRET_KEY'] = 'beyond_course_scope'
+# db.init_app(app)
 
-app.secret_key = os.urandom(12)
+# app.secret_key = os.urandom(12)
 
-oauth = OAuth(app)
+# oauth = OAuth(app)
 # with app.app_context():
 #     db.drop_all()
 #     db.create_all()
@@ -170,8 +170,8 @@ def google_auth():
     return redirect(url_for('jobs'))
 
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run()
+# if __name__ == '__main__':
+#     with app.app_context():
+#         db.create_all()
+#     app.run()
 
